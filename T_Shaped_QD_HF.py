@@ -44,7 +44,7 @@ e2s = np.linspace(-10, 10, numPoints)  # side dot energy values
 save = False
 
 
-def check_error(A, name, threshold=1e-4):
+def check_error(A, name='', threshold=1e-4):
     """
     Checks the relative error given the output of scipy.integrate.quad.
 

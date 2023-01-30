@@ -105,7 +105,7 @@ def plot(x, y, xlabel, ylabel, title=""):
     plt.tight_layout()
 
 
-@njit()
+@njit
 def FermiDirac(w):
     """
     Fermi-Dirac distribution.
@@ -192,14 +192,14 @@ def l(w, n, n1, n2, e2):
     """
     Integrating function for calculating transport properties
 
-    This function is often seen as L_n in the literature after it has been 
+    This function is often seen as L_n in the literature after it has been
     integrated, see Mahan chapter 3.
 
     Parameters
     ----------
     w : float or array
         Frequency.
-    n : 
+    n :
         Order of the integrating function
     n1 : float
         Occupation number for the main dot.
@@ -353,7 +353,7 @@ if save:
         params += f"{T=}\n{delta=}\n{maxIt=}\n{threshold=}\n"
         paramFile.write(params)
     np.savez(directory + folder + "data",
-             e2s=e2s, n1s=n1s, n2=n2s, G=G, kappa=kappa, S=S, ZT=ZT)
+             e2s=e2s, n1s=n1s, n2s=n2s, L0s=L0s, L1s=L1s, L2s=L2s)
 
 # g11 = G11(w[None, :], n1s[:, None], n2s[:, None], e2s[:, None])
 # g22 = G22(w[None, :], n1s[:, None], n2s[:, None], e2s[:, None])
